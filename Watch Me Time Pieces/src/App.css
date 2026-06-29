@@ -167,25 +167,27 @@
 
 @media (max-width: 760px) {
   .app-shell {
-    padding: 14px;
+    padding: 8px;
   }
 
   .nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
     gap: 10px;
-    padding: 4px 0 20px;
+    padding: 8px 0 16px;
   }
 
   .brand {
     width: 100%;
     font-size: 0.95rem;
     letter-spacing: 0.1em;
+    text-align: center;
     order: 1;
   }
 
   .nav-tabs {
     width: 100%;
-    flex-basis: 100%;
     order: 2;
   }
 
@@ -206,13 +208,12 @@
     min-height: 44px;
     padding: 10px 8px;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.72);
     white-space: nowrap;
   }
 
   .nav-search {
     width: 100%;
-    flex-basis: 100%;
     min-width: 0;
     order: 3;
   }
@@ -222,10 +223,11 @@
     min-height: 44px;
     padding: 10px 14px;
     border-radius: 16px;
+    background: rgba(255, 255, 255, 0.72);
   }
 
   .page-content {
-    gap: 24px;
+    gap: 20px;
   }
 
   .hero {
@@ -233,7 +235,7 @@
   }
 
   .hero h1 {
-    font-size: clamp(2.25rem, 11vw, 3.4rem);
+    font-size: clamp(2.25rem, 10vw, 3.35rem);
     line-height: 0.96;
   }
 
@@ -244,19 +246,25 @@
   }
 
   .watch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
 
   .watch-card {
-    padding: 16px;
+    padding: 20px;
     border-radius: 20px;
   }
 
   .watch-visual,
   .watch-visual__fallback,
   .watch-image {
-    min-height: 200px;
-    height: 200px;
+    min-height: clamp(180px, 43vw, 240px);
+    height: clamp(180px, 43vw, 240px);
+  }
+
+  .watch-image {
+    object-fit: contain;
+    padding: 10px;
   }
 
   .watch-loader__ring {
@@ -279,7 +287,8 @@
   }
 
   .watch-card h2 {
-    font-size: 1.1rem;
+    font-size: clamp(1.25rem, 4.8vw, 1.5rem);
+    line-height: 1.02;
   }
 
   .watch-actions {
