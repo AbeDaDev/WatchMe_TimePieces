@@ -29,24 +29,25 @@ export default function Nav({
               Wish List
             </button>
           </li>
-          <li className="nav-search">
-            <form className="search-form" onSubmit={onSearchSubmit}>
-              <label className="sr-only" htmlFor="watch-search">
-                Search watches
-              </label>
-              <input
-                id="watch-search"
-                name="watch-search"
-                type="search"
-                placeholder="Search watches"
-                aria-label="Search watches"
-                value={searchValue}
-                onChange={onSearchChange}
-              />
-            </form>
-          </li>
         </ul>
       </nav>
+
+      <div className="nav-search">
+        <form className="search-form" onSubmit={onSearchSubmit}>
+          <label className="sr-only" htmlFor="watch-search">
+            Search watches
+          </label>
+          <input
+            id="watch-search"
+            name="watch-search"
+            type="search"
+            placeholder="Search watches"
+            aria-label="Search watches"
+            value={searchValue}
+            onChange={onSearchChange}
+          />
+        </form>
+      </div>
     </header>
   )
 }
