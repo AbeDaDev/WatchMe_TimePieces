@@ -166,50 +166,12 @@
 }
 
 @media (max-width: 760px) {
-  .nav {
-    align-items: stretch;
-  }
-
-  .nav-tabs,
-  .nav-search {
-    width: 100%;
-    flex-basis: 100%;
-  }
-
-  .nav-tabs {
-    order: 2;
-  }
-
-  .nav-search {
-    order: 3;
-    min-width: 0;
-  }
-
-  .nav-links {
-    justify-content: flex-start;
-    gap: 12px;
-  }
-
-  .nav-search input {
-    width: 100%;
-  }
-
-  .collection-page__header {
-    grid-template-columns: 1fr;
-    align-items: start;
-  }
-
-  .collection-total-card {
-    width: 100%;
-  }
-}
-
-@media (max-width: 520px) {
   .app-shell {
     padding: 14px;
   }
 
   .nav {
+    align-items: stretch;
     gap: 10px;
     padding: 4px 0 20px;
   }
@@ -223,6 +185,7 @@
 
   .nav-tabs {
     width: 100%;
+    flex-basis: 100%;
     order: 2;
   }
 
@@ -231,6 +194,7 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
     width: 100%;
+    justify-content: stretch;
   }
 
   .nav-links > li {
@@ -247,13 +211,14 @@
   }
 
   .nav-search {
-    grid-column: 1 / -1;
     width: 100%;
+    flex-basis: 100%;
     min-width: 0;
     order: 3;
   }
 
   .nav-search input {
+    width: 100%;
     min-height: 44px;
     padding: 10px 14px;
     border-radius: 16px;
@@ -327,6 +292,15 @@
   .watch-button {
     width: 100%;
     min-height: 44px;
+  }
+
+  .collection-page__header {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .collection-total-card {
+    width: 100%;
   }
 }
 
