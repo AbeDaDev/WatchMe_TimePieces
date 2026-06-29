@@ -124,7 +124,6 @@ export default function WatchCard({
 
       <p className="watch-brand">{brand}</p>
       <h2>{visibleModel}</h2>
-      {meta.length > 0 ? <p className="watch-meta">{meta.join(' • ')}</p> : null}
       <p>{description}</p>
 
       {actionMode === 'full' ? (

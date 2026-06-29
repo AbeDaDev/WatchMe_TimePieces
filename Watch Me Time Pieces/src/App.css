@@ -415,12 +415,6 @@
   color: var(--muted);
 }
 
-.watch-meta {
-  margin: 0 0 8px;
-  font-size: 0.9rem;
-  color: color-mix(in srgb, var(--muted) 88%, black);
-}
-
 .watch-visual {
   position: relative;
   display: grid;
