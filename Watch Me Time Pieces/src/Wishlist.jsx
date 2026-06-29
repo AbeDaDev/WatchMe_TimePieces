@@ -20,11 +20,13 @@ export default function Wishlist({
 
       {items.length > 0 ? (
         <div className="watch-grid">
-          {items.map((watch) => (
+          {items.map((watch, index) => (
             <WatchCard
               key={watch.title}
               {...watch}
               actionMode="wishlist"
+              imageLoading={index === 0 ? 'eager' : 'lazy'}
+              imageFetchPriority={index === 0 ? 'high' : 'auto'}
               onFind={() => onFindWatch(watch)}
               onAddToCollection={() => onMoveToCollection(watch)}
               onRemoveFromWishlist={() => onRemoveFromWishlist(watch.title)}

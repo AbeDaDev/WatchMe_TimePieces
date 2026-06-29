@@ -9,6 +9,8 @@ export default function WatchCard({
   meta = [],
   imageSrc = '',
   imageAlt = '',
+  imageLoading = 'lazy',
+  imageFetchPriority = 'auto',
   onAddToCollection,
   onAddToWishlist,
   onRemoveFromWishlist,
@@ -30,7 +32,14 @@ export default function WatchCard({
 
       <div className={`watch-visual${imageSrc ? ' watch-visual--image' : ''}`}>
         {imageSrc ? (
-          <img className="watch-image" src={imageSrc} alt={imageAlt || title} loading="lazy" />
+          <img
+            className="watch-image"
+            src={imageSrc}
+            alt={imageAlt || title}
+            loading={imageLoading}
+            fetchPriority={imageFetchPriority}
+            decoding="async"
+          />
         ) : (
           <div className="watch-visual__fallback" aria-hidden="true">
             <div className="watch-ring" />

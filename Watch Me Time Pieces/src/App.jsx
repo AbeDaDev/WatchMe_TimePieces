@@ -328,11 +328,13 @@ function App() {
             {isLoadingShowcase ? <p className="status-message">Loading showcase watches...</p> : null}
 
             <section id="collection" className="watch-grid" aria-label="Luxury Time Pieces">
-              {featuredWatches.map((watch) => (
+              {featuredWatches.map((watch, index) => (
                 <WatchCard
                   key={watch.title}
                   {...watch}
                   actionMode="full"
+                  imageLoading="eager"
+                  imageFetchPriority={index === 0 ? 'high' : 'auto'}
                   isInCollection={isSaved(savedCollection, watch.title)}
                   isInWishlist={isSaved(wishlistItems, watch.title)}
                   onFind={() => openRetailerFinder(watch)}
@@ -367,6 +369,8 @@ function App() {
                       key={`${watch.title}-${index}`}
                       {...watch}
                       actionMode="full"
+                      imageLoading="lazy"
+                      imageFetchPriority="low"
                       isInCollection={isSaved(savedCollection, watch.title)}
                       isInWishlist={isSaved(wishlistItems, watch.title)}
                       onFind={() => openRetailerFinder(watch)}

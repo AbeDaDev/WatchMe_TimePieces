@@ -27,11 +27,13 @@ export default function Collection({
 
       {items.length > 0 ? (
         <div className="watch-grid">
-          {items.map((watch) => (
+          {items.map((watch, index) => (
             <WatchCard
               key={watch.title}
               {...watch}
               actionMode="remove"
+              imageLoading={index === 0 ? 'eager' : 'lazy'}
+              imageFetchPriority={index === 0 ? 'high' : 'auto'}
               onRemoveFromCollection={() => onRemove(watch.title)}
             />
           ))}
